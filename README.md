@@ -1,5 +1,13 @@
 \# VoodooTemplate
 
+Get Started
+===========
+So to install VoodooTemplate in AndroidStudio you need open your `./ ${AndroidStudio package} / plugins / android / lib / templates` -- and to clone repository. 
+Then restart the AndroidStudio and you can use template.
+
+When the AndroidStudio is ready to work:
+`Select package -> right click mouse -> New -> VoodooTemlates -> MVP Screen`;
+
 Android IDE Template Format
 ===========================
 
