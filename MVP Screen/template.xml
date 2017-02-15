@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="MVP Screen"
+  >
+
+    <category value="VoodooTemplates" />
+
+<parameter
+        id="name"
+        name="Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="Default"
+       />
+
+<parameter
+        id="generate_activity"
+        name="Generate Activity Class"
+        type="boolean"
+        default="true" />
+
+<parameter
+       	id="generate_fragment"
+	 	name="Generate Fragment Class"
+        type="boolean"
+        default="true" />
+
+	<parameter
+        id="activityName"
+        name="Activity Name"
+        type="string"
+        constraints="class|nonempty|unique"
+		visibility="generate_activity"
+		suggest="${underscoreToCamelCase(classToResource(name))}Activity"
+        default="SimpleActivity"
+       />
+
+
+	<parameter
+        id="layoutActivity"
+        name="Activity Layout Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="activity_"
+        visibility="generate_activity"
+        suggest="activity_${classToResource(name)}"
+       />
+
+	<parameter
+        id="fragmentName"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+		visibility="generate_fragment"
+		suggest="${underscoreToCamelCase(classToResource(name))}Fragment"
+        default="SimpleFragment"
+       />
+
+	<parameter
+        id="layoutFragment"
+        name="Fragment Layout Name"
+		visibility="generate_fragment"
+        constraints="class|nonempty|unique"
+        default="fragment_"
+        suggest="fragment_${classToResource(name)}"
+        />
+  
+      <parameter
+        id="contractName"
+        name="Contract Name"
+        type="string"
+        constraints="class|nonempty|unique"
+		suggest="${underscoreToCamelCase(classToResource(name))}Contract"
+        default="SimpleContract"
+       />
+
+	<parameter
+        id="presenterName"
+        name="Presenter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+		suggest="${underscoreToCamelCase(classToResource(name))}Presenter"
+        default="SimplePresenter"
+       />
+
+
+	
+
+<!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_mvp.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
