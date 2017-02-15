@@ -7,7 +7,7 @@ Then restart the AndroidStudio and you can use template.
 
 When the AndroidStudio is ready to work:
 `Select package -> right click mouse -> New -> VoodooTemlates -> MVP Screen`;
-
+____
 Android IDE Template Format
 ===========================
 
