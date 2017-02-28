@@ -12,10 +12,13 @@ private ${contractName}.Presenter presenter;
 public static ${fragmentName} newInstance(){
 return new ${fragmentName}();
 }
-    @Override
-    public void setPresenter(@NonNull ${contractName}.Presenter presenter) {
-        this.presenter = presenter;
+
+@Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        presenter = new ${name}Presenter(this);
     }
+
 
 @Nullable
     @Override

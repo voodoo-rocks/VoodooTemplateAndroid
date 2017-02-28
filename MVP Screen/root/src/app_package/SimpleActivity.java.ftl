@@ -16,10 +16,6 @@ private ${contractName}.Presenter presenter;
         activity.startActivity(intent);
     }
 <#if !generate_fragment>
- 	@Override
-    public void setPresenter(@NonNull ${contractName}.Presenter presenter) {
-        this.presenter = presenter;
-    }
 
 	@Override
     protected void onStart() {
@@ -37,7 +33,7 @@ private ${contractName}.Presenter presenter;
 
 <#if !generate_fragment>
 	private void initPresenter(){
-		 new ${name}Presenter(this);
+		 presenter = new ${name}Presenter(this);
 	}
 </#if>
 
