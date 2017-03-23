@@ -16,6 +16,14 @@
                  to="${escapeXmlAttribute(resOut)}/layout/${layoutFragment}.xml" />
 </#if>
 
+<#if generate_controller>
+    <instantiate from="root/src/app_package/SimpleController.java.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/${controllerName}.java" />
+
+<instantiate from="root/res/layout/controller_simple.xml"
+                 to="${escapeXmlAttribute(resOut)}/layout/${layoutController}.xml" />
+</#if>
+
     <open file="${escapeXmlAttribute(srcOut)}/${activityName}.java" />
 <#if generate_activity>
     <instantiate from="root/src/app_package/SimpleActivity.java.ftl"

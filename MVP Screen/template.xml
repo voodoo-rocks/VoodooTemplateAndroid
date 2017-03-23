@@ -19,13 +19,21 @@
         id="generate_activity"
         name="Generate Activity Class"
         type="boolean"
-        default="true" />
+        default="false" />
 
 <parameter
        	id="generate_fragment"
 	 	name="Generate Fragment Class"
         type="boolean"
-        default="true" />
+        default="false" />
+
+    <parameter
+        id="generate_controller"
+        name="Generate Controller Class"
+        type="boolean"
+        default="true"
+    />
+
 
 	<parameter
         id="activityName"
@@ -65,6 +73,25 @@
         constraints="class|nonempty|unique"
         default="fragment_"
         suggest="fragment_${classToResource(name)}"
+        />
+
+    <parameter
+        id="controllerName"
+        name="Controller Name"
+        type="string"
+        constraints="class|nonempty|unique"
+		visibility="generate_controller"
+		suggest="${underscoreToCamelCase(classToResource(name))}Controller"
+        default="SimpleController"
+    />
+
+	<parameter
+        id="layoutController"
+        name="Controller Layout Name"
+		visibility="generate_controller"
+        constraints="class|nonempty|unique"
+        default="controller_"
+        suggest="controller_${classToResource(name)}"
         />
   
       <parameter
